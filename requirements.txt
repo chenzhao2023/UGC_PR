@@ -1,0 +1,15 @@
+torch
+torchvision
+monai
+numpy
+scipy
+pandas
+scikit-image
+scikit-learn
+nibabel
+SimpleITK
+opencv-python
+Pillow
+tqdm
+matplotlib
+tensorboard

@@ -1,0 +1,151 @@
+[2026-05-18 20:22:16][INFO] ========== Training started ==========
+[2026-05-18 20:22:16][INFO] Save dir: experiments/Unet3D_fold4_2026-05-18_20-22-16
+[2026-05-18 20:22:16][INFO] Config:
+[2026-05-18 20:22:16][INFO]   model_name: Unet3D
+[2026-05-18 20:22:16][INFO]   weight_dice: 0.4
+[2026-05-18 20:22:16][INFO]   weight_ce: 0.4
+[2026-05-18 20:22:16][INFO]   weight_uq: 0.2
+[2026-05-18 20:22:16][INFO]   use_ugcp: True
+[2026-05-18 20:22:16][INFO]   ugcp_steps: 2
+[2026-05-18 20:22:16][INFO]   ugcp_use_source_term: True
+[2026-05-18 20:22:16][INFO]   ugcp_eta: 1.0
+[2026-05-18 20:22:16][INFO]   ugcp_u0: 0.5
+[2026-05-18 20:22:16][INFO]   ugcp_tau: 0.1
+[2026-05-18 20:22:16][INFO]   fold: 4
+[2026-05-18 20:22:16][INFO]   mini_data: False
+[2026-05-18 20:22:16][INFO]   patch_images: D:\Code\CTA_SEG\UGCP\Dataset\Preprocessed\patches_images
+[2026-05-18 20:22:16][INFO]   patch_labels: D:\Code\CTA_SEG\UGCP\Dataset\Preprocessed\patches_labels
+[2026-05-18 20:22:16][INFO]   root_images: D:\Code\CTA_SEG\UGCP\Dataset\Preprocessed\images
+[2026-05-18 20:22:16][INFO]   root_labels: D:\Code\CTA_SEG\UGCP\Dataset\Preprocessed\labels
+[2026-05-18 20:22:16][INFO]   train_txt: D:\Code\CTA_SEG\UGCP\Dataset\Preprocessed\split\fold4_train.txt
+[2026-05-18 20:22:16][INFO]   val_txt: D:\Code\CTA_SEG\UGCP\Dataset\Preprocessed\split\fold4_val.txt
+[2026-05-18 20:22:16][INFO]   patch_size: (64, 64, 64)
+[2026-05-18 20:22:16][INFO]   samples_per_case: 32
+[2026-05-18 20:22:16][INFO]   overlap_ratio: 0.5
+[2026-05-18 20:22:16][INFO]   epoch: 800
+[2026-05-18 20:22:16][INFO]   batch_size: 8
+[2026-05-18 20:22:16][INFO]   weight_decay: 0.0001
+[2026-05-18 20:22:16][INFO]   seed: 42
+[2026-05-18 20:22:16][INFO]   earlystop: 6
+[2026-05-18 20:22:16][INFO]   valid_freq: 10
+[2026-05-18 20:22:16][INFO]   device: cuda
+[2026-05-18 20:22:16][INFO]   base_lr: 0.001
+[2026-05-18 20:22:16][INFO]   use_warmup: False
+[2026-05-18 20:22:16][INFO]   warmup_epochs: 5
+[2026-05-18 20:22:16][INFO]   warmup_start_lr: 1e-05
+[2026-05-18 20:22:16][INFO]   scheduler: cosine
+[2026-05-18 20:22:16][INFO]   T_0: 60
+[2026-05-18 20:22:16][INFO]   T_mult: 2
+[2026-05-18 20:22:16][INFO]   eta_min: 1e-06
+[2026-05-18 20:22:16][INFO]   use_amp: False
+[2026-05-18 20:22:16][INFO]   amp_dtype: fp16
+[2026-05-18 20:22:16][INFO]   init_scale: 1024
+[2026-05-18 20:22:16][INFO]   growth_interval: 2000
+[2026-05-18 20:22:16][INFO]   use_ddp: False
+[2026-05-18 20:22:16][INFO]   backend: nccl
+[2026-05-18 20:22:16][INFO]   init_method: env://
+[2026-05-18 20:22:16][INFO]   sync_bn: False
+[2026-05-18 20:22:16][INFO]   find_unused_parameters: False
+[2026-05-18 20:22:16][INFO]   cudnn_benchmark: True
+[2026-05-18 20:22:16][INFO]   cudnn_deterministic: False
+[2026-05-18 20:22:16][INFO]   tf32: True
+[2026-05-18 20:22:16][INFO]   matmul_precision: high
+[2026-05-18 20:22:16][INFO]   num_workers: 4
+[2026-05-18 20:22:16][INFO]   persistent_workers: False
+[2026-05-18 20:22:16][INFO]   prefetch_factor: 8
+[2026-05-18 20:22:16][INFO]   pin_memory: True
+[2026-05-18 20:22:16][INFO]   time_stamp: 2026-05-18_20-22-16
+[2026-05-18 20:22:16][INFO]   save_dir: experiments/Unet3D_fold4_2026-05-18_20-22-16
+[2026-05-18 20:22:16][INFO]   logging_dir: experiments/Unet3D_fold4_2026-05-18_20-22-16/logs
+[2026-05-18 20:22:16][INFO]   check_point: False
+[2026-05-18 20:22:16][INFO]   check_point_path: 
+[2026-05-18 20:22:16][INFO]   compute_hd95: False
+[2026-05-18 20:22:57][INFO] [TRAIN] Epoch 000/800 | Dice=0.5899 | loss=0.2859 | lr=9.9932e-04
+[2026-05-18 20:23:18][INFO] [VAL  ] Epoch 000/800 | Dice=0.7192 | HD95=0.00 | Recall=0.7262 | Precision=0.7094 | Spec=0.9981
+[2026-05-18 20:23:18][INFO] [CKPT ] Epoch 000/800 | New BEST Dice=0.7192 | saved=best.pth
+[2026-05-18 20:23:56][INFO] [TRAIN] Epoch 001/800 | Dice=0.7137 | loss=0.2108 | lr=9.9726e-04
+[2026-05-18 20:24:33][INFO] [TRAIN] Epoch 002/800 | Dice=0.7367 | loss=0.2021 | lr=9.9385e-04
+[2026-05-18 20:25:10][INFO] [TRAIN] Epoch 003/800 | Dice=0.7483 | loss=0.1965 | lr=9.8908e-04
+[2026-05-18 20:25:48][INFO] [TRAIN] Epoch 004/800 | Dice=0.7601 | loss=0.1935 | lr=9.8298e-04
+[2026-05-18 20:26:25][INFO] [TRAIN] Epoch 005/800 | Dice=0.7714 | loss=0.1895 | lr=9.7555e-04
+[2026-05-18 20:27:02][INFO] [TRAIN] Epoch 006/800 | Dice=0.7776 | loss=0.1847 | lr=9.6682e-04
+[2026-05-18 20:27:41][INFO] [TRAIN] Epoch 007/800 | Dice=0.7798 | loss=0.1851 | lr=9.5682e-04
+[2026-05-18 20:28:20][INFO] [TRAIN] Epoch 008/800 | Dice=0.7834 | loss=0.1832 | lr=9.4556e-04
+[2026-05-18 20:28:58][INFO] [TRAIN] Epoch 009/800 | Dice=0.7882 | loss=0.1827 | lr=9.3308e-04
+[2026-05-18 20:29:36][INFO] [TRAIN] Epoch 010/800 | Dice=0.7931 | loss=0.1801 | lr=9.1942e-04
+[2026-05-18 20:29:56][INFO] [VAL  ] Epoch 010/800 | Dice=0.7962 | HD95=0.00 | Recall=0.8292 | Precision=0.7695 | Spec=0.9984
+[2026-05-18 20:29:56][INFO] [CKPT ] Epoch 010/800 | New BEST Dice=0.7962 | saved=best.pth
+[2026-05-18 20:30:34][INFO] [TRAIN] Epoch 011/800 | Dice=0.7955 | loss=0.1788 | lr=9.0460e-04
+[2026-05-18 20:31:12][INFO] [TRAIN] Epoch 012/800 | Dice=0.7996 | loss=0.1779 | lr=8.8868e-04
+[2026-05-18 20:31:50][INFO] [TRAIN] Epoch 013/800 | Dice=0.8011 | loss=0.1749 | lr=8.7170e-04
+[2026-05-18 20:32:27][INFO] [TRAIN] Epoch 014/800 | Dice=0.8024 | loss=0.1744 | lr=8.5370e-04
+[2026-05-18 20:33:05][INFO] [TRAIN] Epoch 015/800 | Dice=0.8038 | loss=0.1751 | lr=8.3473e-04
+[2026-05-18 20:33:45][INFO] [TRAIN] Epoch 016/800 | Dice=0.8069 | loss=0.1733 | lr=8.1485e-04
+[2026-05-18 20:34:25][INFO] [TRAIN] Epoch 017/800 | Dice=0.8114 | loss=0.1728 | lr=7.9410e-04
+[2026-05-18 20:35:02][INFO] [TRAIN] Epoch 018/800 | Dice=0.8091 | loss=0.1715 | lr=7.7255e-04
+[2026-05-18 20:35:40][INFO] [TRAIN] Epoch 019/800 | Dice=0.8114 | loss=0.1701 | lr=7.5025e-04
+[2026-05-18 20:36:19][INFO] [TRAIN] Epoch 020/800 | Dice=0.8143 | loss=0.1709 | lr=7.2727e-04
+[2026-05-18 20:36:38][INFO] [VAL  ] Epoch 020/800 | Dice=0.8012 | HD95=0.00 | Recall=0.8906 | Precision=0.7320 | Spec=0.9980
+[2026-05-18 20:36:38][INFO] [CKPT ] Epoch 020/800 | New BEST Dice=0.8012 | saved=best.pth
+[2026-05-18 20:37:15][INFO] [TRAIN] Epoch 021/800 | Dice=0.8156 | loss=0.1678 | lr=7.0366e-04
+[2026-05-18 20:37:54][INFO] [TRAIN] Epoch 022/800 | Dice=0.8184 | loss=0.1672 | lr=6.7950e-04
+[2026-05-18 20:38:31][INFO] [TRAIN] Epoch 023/800 | Dice=0.8184 | loss=0.1668 | lr=6.5485e-04
+[2026-05-18 20:39:09][INFO] [TRAIN] Epoch 024/800 | Dice=0.8221 | loss=0.1639 | lr=6.2978e-04
+[2026-05-18 20:39:49][INFO] [TRAIN] Epoch 025/800 | Dice=0.8199 | loss=0.1687 | lr=6.0435e-04
+[2026-05-18 20:40:29][INFO] [TRAIN] Epoch 026/800 | Dice=0.8270 | loss=0.1628 | lr=5.7864e-04
+[2026-05-18 20:41:07][INFO] [TRAIN] Epoch 027/800 | Dice=0.8242 | loss=0.1628 | lr=5.5271e-04
+[2026-05-18 20:41:46][INFO] [TRAIN] Epoch 028/800 | Dice=0.8276 | loss=0.1630 | lr=5.2664e-04
+[2026-05-18 20:42:24][INFO] [TRAIN] Epoch 029/800 | Dice=0.8274 | loss=0.1619 | lr=5.0050e-04
+[2026-05-18 20:43:02][INFO] [TRAIN] Epoch 030/800 | Dice=0.8299 | loss=0.1586 | lr=4.7436e-04
+[2026-05-18 20:43:21][INFO] [VAL  ] Epoch 030/800 | Dice=0.8311 | HD95=0.00 | Recall=0.8344 | Precision=0.8329 | Spec=0.9990
+[2026-05-18 20:43:21][INFO] [CKPT ] Epoch 030/800 | New BEST Dice=0.8311 | saved=best.pth
+[2026-05-18 20:43:59][INFO] [TRAIN] Epoch 031/800 | Dice=0.8304 | loss=0.1628 | lr=4.4829e-04
+[2026-05-18 20:44:37][INFO] [TRAIN] Epoch 032/800 | Dice=0.8324 | loss=0.1590 | lr=4.2236e-04
+[2026-05-18 20:45:15][INFO] [TRAIN] Epoch 033/800 | Dice=0.8318 | loss=0.1609 | lr=3.9665e-04
+[2026-05-18 20:45:55][INFO] [TRAIN] Epoch 034/800 | Dice=0.8368 | loss=0.1563 | lr=3.7122e-04
+[2026-05-18 20:46:43][INFO] [TRAIN] Epoch 035/800 | Dice=0.8352 | loss=0.1567 | lr=3.4615e-04
+[2026-05-18 20:47:20][INFO] [TRAIN] Epoch 036/800 | Dice=0.8363 | loss=0.1569 | lr=3.2150e-04
+[2026-05-18 20:47:59][INFO] [TRAIN] Epoch 037/800 | Dice=0.8366 | loss=0.1558 | lr=2.9734e-04
+[2026-05-18 20:48:36][INFO] [TRAIN] Epoch 038/800 | Dice=0.8385 | loss=0.1573 | lr=2.7373e-04
+[2026-05-18 20:49:14][INFO] [TRAIN] Epoch 039/800 | Dice=0.8375 | loss=0.1549 | lr=2.5075e-04
+[2026-05-18 20:49:52][INFO] [TRAIN] Epoch 040/800 | Dice=0.8406 | loss=0.1542 | lr=2.2845e-04
+[2026-05-18 20:50:12][INFO] [VAL  ] Epoch 040/800 | Dice=0.8381 | HD95=0.00 | Recall=0.8550 | Precision=0.8263 | Spec=0.9989
+[2026-05-18 20:50:12][INFO] [CKPT ] Epoch 040/800 | New BEST Dice=0.8381 | saved=best.pth
+[2026-05-18 20:50:49][INFO] [TRAIN] Epoch 041/800 | Dice=0.8403 | loss=0.1542 | lr=2.0690e-04
+[2026-05-18 20:51:27][INFO] [TRAIN] Epoch 042/800 | Dice=0.8386 | loss=0.1537 | lr=1.8615e-04
+[2026-05-18 20:52:06][INFO] [TRAIN] Epoch 043/800 | Dice=0.8417 | loss=0.1533 | lr=1.6627e-04
+[2026-05-18 20:52:44][INFO] [TRAIN] Epoch 044/800 | Dice=0.8397 | loss=0.1546 | lr=1.4730e-04
+[2026-05-18 20:53:21][INFO] [TRAIN] Epoch 045/800 | Dice=0.8431 | loss=0.1517 | lr=1.2930e-04
+[2026-05-18 20:53:59][INFO] [TRAIN] Epoch 046/800 | Dice=0.8434 | loss=0.1498 | lr=1.1232e-04
+[2026-05-18 20:54:37][INFO] [TRAIN] Epoch 047/800 | Dice=0.8443 | loss=0.1505 | lr=9.6396e-05
+[2026-05-18 20:55:14][INFO] [TRAIN] Epoch 048/800 | Dice=0.8448 | loss=0.1520 | lr=8.1584e-05
+[2026-05-18 20:55:52][INFO] [TRAIN] Epoch 049/800 | Dice=0.8432 | loss=0.1494 | lr=6.7920e-05
+[2026-05-18 20:56:29][INFO] [TRAIN] Epoch 050/800 | Dice=0.8472 | loss=0.1497 | lr=5.5442e-05
+[2026-05-18 20:56:48][INFO] [VAL  ] Epoch 050/800 | Dice=0.8409 | HD95=0.00 | Recall=0.8423 | Precision=0.8442 | Spec=0.9990
+[2026-05-18 20:56:48][INFO] [CKPT ] Epoch 050/800 | New BEST Dice=0.8409 | saved=best.pth
+[2026-05-18 20:57:27][INFO] [TRAIN] Epoch 051/800 | Dice=0.8453 | loss=0.1507 | lr=4.4184e-05
+[2026-05-18 20:58:05][INFO] [TRAIN] Epoch 052/800 | Dice=0.8455 | loss=0.1498 | lr=3.4177e-05
+[2026-05-18 20:58:43][INFO] [TRAIN] Epoch 053/800 | Dice=0.8453 | loss=0.1489 | lr=2.5447e-05
+[2026-05-18 20:59:21][INFO] [TRAIN] Epoch 054/800 | Dice=0.8462 | loss=0.1488 | lr=1.8020e-05
+[2026-05-18 20:59:59][INFO] [TRAIN] Epoch 055/800 | Dice=0.8464 | loss=0.1500 | lr=1.1915e-05
+[2026-05-18 21:00:36][INFO] [TRAIN] Epoch 056/800 | Dice=0.8449 | loss=0.1507 | lr=7.1497e-06
+[2026-05-18 21:01:14][INFO] [TRAIN] Epoch 057/800 | Dice=0.8450 | loss=0.1497 | lr=3.7363e-06
+[2026-05-18 21:01:52][INFO] [TRAIN] Epoch 058/800 | Dice=0.8470 | loss=0.1482 | lr=1.6845e-06
+[2026-05-18 21:02:30][INFO] [TRAIN] Epoch 059/800 | Dice=0.8443 | loss=0.1496 | lr=1.0000e-03
+[2026-05-18 21:03:08][INFO] [TRAIN] Epoch 060/800 | Dice=0.8173 | loss=0.1669 | lr=9.9983e-04
+[2026-05-18 21:03:28][INFO] [VAL  ] Epoch 060/800 | Dice=0.8247 | HD95=0.00 | Recall=0.8324 | Precision=0.8222 | Spec=0.9989
+[2026-05-18 21:03:28][INFO] [STAT ] Epoch 060/800 | Best Dice=0.8409 | Patience 1/6
+[2026-05-18 21:04:06][INFO] [TRAIN] Epoch 061/800 | Dice=0.8213 | loss=0.1641 | lr=9.9932e-04
+[2026-05-18 21:04:45][INFO] [TRAIN] Epoch 062/800 | Dice=0.8247 | loss=0.1622 | lr=9.9846e-04
+[2026-05-18 21:05:23][INFO] [TRAIN] Epoch 063/800 | Dice=0.8276 | loss=0.1613 | lr=9.9726e-04
+[2026-05-18 21:06:01][INFO] [TRAIN] Epoch 064/800 | Dice=0.8260 | loss=0.1617 | lr=9.9573e-04
+[2026-05-18 21:06:39][INFO] [TRAIN] Epoch 065/800 | Dice=0.8254 | loss=0.1632 | lr=9.9385e-04
+[2026-05-18 21:07:17][INFO] [TRAIN] Epoch 066/800 | Dice=0.8253 | loss=0.1631 | lr=9.9164e-04
+[2026-05-18 21:07:54][INFO] [TRAIN] Epoch 067/800 | Dice=0.8266 | loss=0.1625 | lr=9.8908e-04
+[2026-05-18 21:08:32][INFO] [TRAIN] Epoch 068/800 | Dice=0.8309 | loss=0.1615 | lr=9.8620e-04
+[2026-05-18 21:09:09][INFO] [TRAIN] Epoch 069/800 | Dice=0.8291 | loss=0.1597 | lr=9.8298e-04
+[2026-05-18 21:09:51][INFO] [TRAIN] Epoch 070/800 | Dice=0.8307 | loss=0.1602 | lr=9.7943e-04
+[2026-05-18 21:10:10][INFO] [VAL  ] Epoch 070/800 | Dice=0.8381 | HD95=0.00 | Recall=0.8441 | Precision=0.8376 | Spec=0.9990
+[2026-05-18 21:10:10][INFO] [STAT ] Epoch 070/800 | Best Dice=0.8409 | Patience 2/6
+[2026-05-18 21:10:49][INFO] [TRAIN] Epoch 071/800 | Dice=0.8297 | loss=0.1604 | lr=9.7555e-04
+[2026-05-18 21:11:27][INFO] [TRAIN] Epoch 072/800 | Dice=0.8316 | loss=0.1590 | lr=9.7135e-04
