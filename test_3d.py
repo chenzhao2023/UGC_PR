@@ -10,7 +10,7 @@ from skimage.morphology import skeletonize_3d
 from torch.utils.data import DataLoader
 from tqdm import tqdm
 
-from configs_3d import parse_args
+from configs_3d import parse_args, set_default_split_paths
 from dataset_3d import MRACaseDataset, load_case_list
 from misc_3d import build_model
 
@@ -73,6 +73,9 @@ def parse_experiment_name(experiment_name):
 
 def collect_experiments(experiments_dir):
     experiment_paths = []
+    if not experiments_dir.exists():
+        return experiment_paths
+
     for experiment_path in sorted(experiments_dir.iterdir()):
         if not experiment_path.is_dir():
             continue
@@ -147,6 +150,9 @@ def evaluate_experiment(cfg, model, loader, device, prediction_dir, csv_path):
         pred_path = prediction_dir / f"{Path(case_name).stem}.npz"
         np.savez_compressed(pred_path, pred=pred_mask.cpu().numpy().astype(np.bool_))
 
+    if not records:
+        raise RuntimeError(f"No validation cases found in {cfg.data.val_txt}")
+
     with csv_path.open("w", newline="") as file_obj:
         writer = csv.DictWriter(file_obj, fieldnames=["case", "dice", "cldice", "hd95"])
         writer.writeheader()
@@ -169,6 +175,7 @@ def save_summary_csv(summary_path, summary_rows):
         "dice",
         "cldice",
         "hd95",
+        "val_txt",
     ]
     with summary_path.open("w", newline="") as file_obj:
         writer = csv.DictWriter(file_obj, fieldnames=fieldnames)
@@ -186,6 +193,10 @@ def main():
 
     results_dir.mkdir(parents=True, exist_ok=True)
     experiment_paths = collect_experiments(experiments_dir)
+    if not experiment_paths:
+        print(f"[TEST ] No experiments with best.pth found in {experiments_dir}")
+        return
+
     summary_rows = []
 
     for experiment_path in experiment_paths:
@@ -193,6 +204,7 @@ def main():
         model_name, fold = parse_experiment_name(experiment_path.name)
         cfg.model.model_name = model_name
         cfg.data.fold = fold
+        set_default_split_paths(cfg, force=True)
 
         print(f"\n[TEST ] {experiment_path.name}")
 
@@ -216,6 +228,7 @@ def main():
                 "dice": metrics["dice"],
                 "cldice": metrics["cldice"],
                 "hd95": metrics["hd95"],
+                "val_txt": cfg.data.val_txt,
             }
         )
         print(
