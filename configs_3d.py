@@ -122,6 +122,17 @@ class Config:
         self.system = SystemConfig()
         self.runtime = RuntimeConfig()
 
+def get_split_dir(data_cfg):
+    split_name = "split_10per" if data_cfg.mini_data else "split"
+    return PROJECT_DIR / "Dataset" / "Preprocessed" / split_name
+
+
+def set_default_split_paths(cfg, force=False):
+    split_dir = get_split_dir(cfg.data)
+    if force or cfg.data.train_txt == "":
+        cfg.data.train_txt = str(split_dir / f"fold{cfg.data.fold}_train.txt")
+    if force or cfg.data.val_txt == "":
+        cfg.data.val_txt = str(split_dir / f"fold{cfg.data.fold}_val.txt")
 
 def parse_args():
     parser = argparse.ArgumentParser()
